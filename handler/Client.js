@@ -18,14 +18,14 @@ const { readdirSync } = require("fs");
 module.exports = async (client) => {
 
     client.manager = new Manager({
-        nodes: {
+        nodes: [{
           host: process.env.HOST,
           password: process.env.PASSWORD,
           port: process.env.PORT,
           identifier: process.env.IDENTIFIER,
           retryAmount: process.env.RETRYAMOUNT,
           secure: process.env.SECURE
-         },
+         }],
         send: (id, payload) => {
             const guild = client.guilds.cache.get(id);
             if (guild) guild.shard.send(payload);
