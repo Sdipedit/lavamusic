@@ -30,37 +30,7 @@
     "description": "your discord id",
       "required": false
      },
-    "HOST":{
-    "description": "lavalink host",
-      "value": "disbotlistlavalink.ml",
-      "required": true
-     },
-    "PORT":{
-    "description": "lavalink port",
-      "value": "443",
-      "required": true
-     },
-    "PASSWORD":{
-    "description": "lavalink password",
-      "value": "LAVA",
-      "required": true
-     },
-    "IDENTIFIER":{
-    "description": "lavalink identifier",
-     "value": "DisBotlist lavalink",
-      "required": false
-     },
-     "RETRYAMOUNT":{
-    "description": "lavalink retryAmount",
-     "value": "3000",
-      "required": false
-     },
-    "SECURE":{
-    "description": "lavalink secure",
-     "value": "true",
-      "required": false
-     },
-    "TOKEN": {
+     "TOKEN": {
       "description": "Your bot's bot token.",
       "required": true
     }
