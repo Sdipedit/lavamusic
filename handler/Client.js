@@ -1,5 +1,6 @@
 const { Client } = require("discord.js");const chalk = require("chalk");
 const array = [];
+const env = require('dotenv');
 const mongoose = require('mongoose');
 const { Database } = require("quickmongo");
 const { Manager } = require("erela.js");
@@ -17,15 +18,22 @@ const { readdirSync } = require("fs");
 module.exports = async (client) => {
 
     client.manager = new Manager({
-        nodes: client.config.nodes,
+        nodes: {
+          host: process.env.HOST,
+          password: process.env.PASSWORD,
+          port: process.env.PORT,
+          identifier: process.env.IDENTIFIER,
+          retryAmount: process.env.RETRYAMOUNT,
+          secure: process.env.SECURE
+         },
         send: (id, payload) => {
             const guild = client.guilds.cache.get(id);
             if (guild) guild.shard.send(payload);
         },
         autoPlay: true,
         plugins: [new Spotify({
-            clientID: client.config.SpotifyID,
-            clientSecret: client.config.SpotifySecret,
+            clientID: process.env.SPOTIFYID,
+            clientSecret: process.env.SPOTIFYSECRET,
         }),
                 new Deezer(),
                 new FaceBook()
@@ -45,7 +53,7 @@ module.exports = async (client) => {
       family: 4,
       useUnifiedTopology: true,
     };
-      mongoose.connect(client.config.mongourl, dbOptions);
+      mongoose.connect(process.env.MONGO_URI, dbOptions);
       mongoose.set("useFindAndModify", false);
       mongoose.Promise = global.Promise;
         mongoose.connection.on('connected', () => {
