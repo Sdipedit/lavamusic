@@ -44,17 +44,17 @@
      },
     "IDENTIFIER":{
     "description": "lavalink identifier",
-     "default": "DisBotlist lavalink",
+     "value": "DisBotlist lavalink",
       "required": false
      },
      "RETRYAMOUNT":{
     "description": "lavalink retryAmount",
-     "default": "3",
+     "value": "3000",
       "required": false
      },
     "SECURE":{
     "description": "lavalink secure",
-     "default": "true",
+     "value": "true",
       "required": false
      },
     "TOKEN": {
