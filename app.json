@@ -32,7 +32,7 @@
      },
     "HOST":{
     "description": "lavalink host",
-      "value": "",
+      "value": "disbotlistlavalink.ml",
       "required": true
      },
     "PORT":{
