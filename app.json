@@ -16,6 +16,7 @@
      },
     "PREFIX":{
     "description": "your prefix",
+     "value": "!",
       "required": true
      },
     "SPOTIFYID":{
