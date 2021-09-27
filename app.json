@@ -32,14 +32,17 @@
      },
     "HOST":{
     "description": "lavalink host",
+      "value": "",
       "required": true
      },
     "PORT":{
     "description": "lavalink port",
+      "value": "443",
       "required": true
      },
     "PASSWORD":{
     "description": "lavalink password",
+      "value": "LAVA",
       "required": true
      },
     "IDENTIFIER":{
