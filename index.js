@@ -1,5 +1,6 @@
 const { Client, Collection, Intents } = require("discord.js");
 const mongoose = require('mongoose');
+const env = require('dotenv');
 const { Database } = require("quickmongo");
 const { readdirSync } = require("fs");
 const client = new Client({
@@ -17,7 +18,7 @@ module.exports = client;
 client.commands = new Collection();
 client.slashCommands = new Collection();
 client.config = require("./config.json");
-client.db = new Database(client.config.mongourl);
+client.db = new Database(process.env.MONGO_URI);
 client.owner = client.config.ownerID;
 client.prefix = client.config.prefix;
 client.embedColor = client.config.embedColor;
@@ -30,6 +31,6 @@ client.emoji = require("./utils/emoji.json");
 require("./handler/Client")(client);
 
 
-client.login(client.config.token);
+client.login(process.env.TOKEN);
 
 
